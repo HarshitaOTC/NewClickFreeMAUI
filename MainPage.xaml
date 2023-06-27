@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClickFree_Maui.MainPage"
+            Title="Click Free" 
+            MaximumHeightRequest="441" MinimumWidthRequest="800" 
+            MaximumWidthRequest="800" 
+            HeightRequest="441" WidthRequest="800"
+             xmlns:Views ="namespace:ClickFree_Maui.MainViews"
+        xmlns:vm="namespace:ClickFree_Maui.ViewModel"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="MainView">
+            </DataTemplate>
+        
+            <!--<DataTemplate x:Key="TransferVM">
+            </DataTemplate>
+       
+            <DataTemplate x:Key="DefaultFoldersVM">
+            </DataTemplate>
+        
+            <DataTemplate x:Key="EraseDeviceVM">
+            </DataTemplate>
+        
+            <DataTemplate x:Key="BackupToUSBMainVM">
+            </DataTemplate>
+       
+            <DataTemplate x:Key="BackupToUSBSelectVM">
+            </DataTemplate>
+       
+            <DataTemplate x:Key="BackupFacebookMainVM">
+            </DataTemplate>
+        
+            <DataTemplate x:Key="BackupFacebookDestVM">
+            </DataTemplate>
+        
+            <DataTemplate x:Key="BackupFacebookSelectImagesVM">
+            </DataTemplate>
+        
+            <DataTemplate x:Key="BackupInstagramMainVM">
+            </DataTemplate>
+        
+            <DataTemplate x:Key="BackupInstagramDestVM">
+            </DataTemplate>
+       
+            <DataTemplate x:Key="BackupInstagramSelectImagesVM">
+            </DataTemplate>
+            <DataTemplate x:Key="OnboardingVM">
+            </DataTemplate>-->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        
+       
+
+        
+        <Grid>
+            <ContentView Content="{Binding Path=CurrentView}" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

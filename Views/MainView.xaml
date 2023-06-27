@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClickFree_Maui.Views.MainView" Loaded="UserControl_Loaded">
+   
+   
+        <VerticalStackLayout>
+            <Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="92" />
+                        <ColumnDefinition Width="76"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="55"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Button x:Name="mainButton" Width="60" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                    Style="{StaticResource MenuButtonStyle}" Command="{Binding Path=Navigation.BackCommand}" Clicked="MainBtn">
+
+
+
+
+                    </Button>
+
+                    <Button x:Name="settingsButton" Grid.Column="1" Style="{StaticResource MenuButtonStyle}" 
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Clicked="SettingsBtn">
+
+                    </Button>
+
+                    <Button x:Name="aboutButton" Grid.Column="2" Style="{StaticResource MenuButtonStyle}" 
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Clicked="aboutButton_Clicked">
+
+                    </Button>
+
+                    <Button Grid.Column="4" Height="40"
+                    Style="{StaticResource MenuButtonStyle}" Command="{Binding Path=Navigation.EailSupportCommand}" 
+                    HorizontalOptions="Start" VerticalOptions="Start" Clicked="EmailBtn" >
+
+                    </Button>
+
+                    <Button Grid.Column="5" Height="40"
+                    Style="{StaticResource MenuButtonStyle}" Command="{Binding Path=Navigation.ChatSupportCommand}" 
+                    HorizontalOptions="Start" VerticalOptions="Start" Clicked="ChatBtn" >
+
+                    </Button>
+
+                    <Button x:Name="usbButton" Grid.Column="6" Style="{StaticResource USBButtonStyle}" Margin="10,0,15,0">
+                        <!--<Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel Orientation="Vertical">
+                                <Label Name="connection" Margin="10 5" FontWeight="Bold"></Label>
+                                <Line Name="lineBreak" Stroke="Black" StrokeThickness="2" X2="240"></Line>
+                                <Label Name="space" Margin="10 5" FontWeight="Bold"></Label>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>-->
+                    </Button>
+                </Grid>
+
+
+                <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Center" x:Name="MainPanel" IsVisible="Visible">
+                    <Editor VerticalOptions="Center" HorizontalOptions="Center" FontSize="34" Margin="0,65,0,25">
+                        <!--<Run Text="Click" FontFamily="Josefin Sans" Foreground="#54BAF4" /><Run Text="Free" FontFamily="Jura" Foreground="White"/>-->
+                    </Editor>
+                    <Button Text="Transfer your photos and videos to PC" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=TransferToPCCommand}"/>
+                    <Button Text="Backup photos and Videos to Clickfree USB" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=BackupToUSBCommand}"/>
+                    <Button Text="View ClickFree" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=ViewClickFreeCommand}"/>
+                    <Button Text="Backup from Facebook" Style="{StaticResource BackupFromFacebookToUSBMainButtonStyle}" IsEnabled="True" Command="{Binding Path=BackupFromFacebookCommand}"/>
+                    <Button Text="Backup from Inst24agram" Style="{StaticResource BackupFromInstagramToUSBMainButtonStyle}" IsEnabled="True" Command="{Binding Path=BackupFromInstagramCommand}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Center" x:Name="SettingsPanel" IsVisible="Hidden">
+                    <Editor VerticalOptions="Center" HorizontalOptions="Center" FontSize="34" Margin="0,65,0,15">
+                        <!--<Run Text="Click" FontFamily="Josefin Sans" Foreground="#54BAF4" /><Run Text="Free" FontFamily="Jura" Foreground="White"/>-->
+                    </Editor>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical" Margin="0,0,10,0">
+                            <Button Text="FAQ" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start"
+                            Command="{Binding Path=Navigation.FAQCommand}"/>
+                            <Button Text="Get Help" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start"
+                            Command="{Binding Path=Navigation.GetHelpCommand}"/>
+                            <Button Text="Erase Device" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start" Command="{Binding Navigation.TransferSelectedFilesCommand}"/>
+                            <Button Text="Language" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start" IsEnabled="False"/>
+                            <Button Text="Contact Us" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start"
+                            Command="{Binding Path=Navigation.ContactUSCommand}"/>
+                            <Button Text="About Us" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start" IsEnabled="False"/>
+
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" Margin="10,0,0,0">
+                            <Button Text="Notifications" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start" IsEnabled="False"/>
+                            <Button Text="Upgrade to Premium (TBD)" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start" IsEnabled="False"/>
+                            <Button Text="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start" Command="{Binding Path=DefaultFoldersCommand}"/>
+                            <Button Text="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start"   Command="{Binding Path=Navigation.HowtovideoCommand}"/>
+                            <Button Text="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalOptions="Start" IsEnabled="False"/>
+                            <Button Text="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}"  IsVisible="True" HorizontalOptions="Start" 
+                            Command="{Binding Path=Navigation.FormatClickFreeCommand}" />
+                            <!-- Click="FormatClickFreeUSBBtn_Click" -->
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Center" x:Name="AboutPanel" IsVisible="Hidden">
+                    <Editor VerticalOptions="Center" HorizontalOptions="Center" FontSize="34" Margin="0,65,0,25">
+                        <!--<Run Text="Click" FontFamily="Josefin Sans" Foreground="#54BAF4" /><Run Text="Free" FontFamily="Jura" Foreground="White"/>-->
+                    </Editor>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+
+                        <StackLayout Orientation="Vertical" Margin="0,0,0,0">
+                            <Label x:Name="Firmwarelbl" Text="Firmware version:" 
+                       VerticalOptions="Start" HorizontalOptions="Start" FontFamily="Josefin Sans"  BackgroundColor="White" FontSize="14"/>
+                            <Label x:Name="FirmwareVersionlbl" Text=""
+                       VerticalOptions="Start" HorizontalOptions="Start" FontFamily="Josefin Sans"  BackgroundColor="White" FontSize="14"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" Margin="40,0,0,0">
+                            <Label x:Name="Applicationlbl" Text="Application version:" FontSize="14"
+                       VerticalOptions="End" HorizontalOptions="Start" FontFamily="Josefin Sans" BackgroundColor="White" />
+                            <Label x:Name="AppVersionlbl"  FontSize="14"
+                       VerticalOptions="Start" HorizontalOptions="Start" FontFamily="Josefin Sans"  BackgroundColor="White" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" Margin="40,0,0,0">
+                            <Label x:Name="Addresslbl" Text="File System:" FontSize="14" VerticalOptions="Start" HorizontalOptions="Start" FontFamily="Josefin Sans" 
+                           BackgroundColor="White" />
+                            <Label x:Name="lblFileSystem" FontSize="14" VerticalOptions="Start" HorizontalOptions="Start" FontFamily="Josefin Sans"  BackgroundColor="White" />
+                            <!--<Label Content="17720 Oak Park Avenue," FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />-->
+                            <!--<Label Content="Tinley Park, IL," FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White"/>
+                    <Label Content="60477, USA" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />-->
+                        </StackLayout>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0,120,0,10" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label x:Name="Yearlbl" BackgroundColor="White" FontSize="14" VerticalOptions="End" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
+        </VerticalStackLayout>
+</ContentView>
+
+
