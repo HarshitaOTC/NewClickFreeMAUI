@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace ClickFree_Maui;
+namespace ClickFreeMaui;
 
 [Application]
 public class MainApplication : MauiApplication

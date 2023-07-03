@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace ClickFree_Maui;
+namespace ClickFreeMaui;
 
 public class Program
 {

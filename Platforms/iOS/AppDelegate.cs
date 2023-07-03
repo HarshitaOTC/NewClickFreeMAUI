@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace ClickFree_Maui;
+namespace ClickFreeMaui;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

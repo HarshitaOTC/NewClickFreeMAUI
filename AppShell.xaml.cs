@@ -1,4 +1,4 @@
-﻿namespace ClickFree_Maui;
+﻿namespace ClickFreeMaui;
 
 public partial class AppShell : Shell
 {
