@@ -27,7 +27,7 @@ jobs:
     - name: Decrypt PFX File 
       run: 
        echo "${{ secrets.WINDOWS_PFX_FILE }}" › ClickFreeMaui_TemporaryKey.pfx.asc
-       certutil -decode ClickFreeMaui_TemporaryKey.pfx.asc  ClickFreeMaui_TemporaryKey.pfx 
+       certutil -decode ClickFreeMaui_TemporaryKey.pfx.asc  ClickFreeMaui_TemporaryKey.pfx  
     - name: Add Cert to Store
       run: certutil -user -q -p ${{ secrets.WINDOWS_PFX_PASSWORD }} -importpfx ClickFreeMaui_TemporaryKey.pfx NoRoot
     - name: Build
